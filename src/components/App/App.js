@@ -66,32 +66,38 @@ class App extends Component {
             <h1>National Parks List</h1>
           </Link>
           <Link to="/parks">Parks List</Link>
-          <Link to="/DE">DE</Link>
+          {/* <Link to="/DE">DE</Link>
           <Link to="/PHILLY">PHILLY</Link>
-          <Link to="/DC">DC</Link>
+          <Link to="/DC">DC</Link> */}
+          <Link to="/infopage/Delaware">DE</Link>
+          <Link to="/infopage/Pennsylvania">PA</Link>
+          <Link to="/infopage/Virginia">VA</Link>
+          <Link to="/infopage/Maryland">MD</Link>
+          <Link to="/infopage/District of Columbia">DC</Link>
+          {/* <Link to={"/infopage/" + item.parkCode}>{item.fullName}</Link> */}
         </nav>
         <main>
           <Route path="/" exact component={Home} />
           {/* <Route
             path="/parks"
             render={routerProps => <Parks {...routerProps} {...this.state} />}
-          />
+          /> */}
           <Route
             path="/infopage/:parkpage"
             // component={Price}
             render={routerProps => (
-              <InfoPage
+              <AreaHome
                 setInfoPage={this.setInfoPage}
                 {...routerProps}
                 {...this.state}
               />
             )}
-          /> */}
+          />
           <Route
             path="/DE"
             // component={Price}
             render={routerProps => (
-              <DE
+              <AreaHome
                 setInfoPage={this.setInfoPage}
                 {...routerProps}
                 {...this.state}
