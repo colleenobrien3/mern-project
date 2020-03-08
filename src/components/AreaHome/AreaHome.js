@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import $ from "jquery";
+import "../../../node_modules/bootstrap/dist/js/bootstrap";
+import "jquery";
+import "bootstrap/dist/js/bootstrap";
 
 class AreaHome extends Component {
   constructor() {
@@ -37,34 +42,57 @@ class AreaHome extends Component {
       return (
         <div>
           <h2>{this.state.currentObj[0].name}</h2>
-          <div class="modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Modal title</h5>
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
+          <p>Hello</p>
+          <div id="accordion" role="tablist">
+            <div className="card">
+              <div className="card-header" role="tab" id="headingOne">
+                <h5 className="mb-0">
+                  <a
+                    data-toggle="collapse"
+                    href="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
                   >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                    Collapsible Group Item #1
+                  </a>
+                </h5>
+              </div>
+
+              <div
+                id="collapseOne"
+                className="collapse show"
+                role="tabpanel"
+                aria-labelledby="headingOne"
+              >
+                <div className="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life
+                  accusamus terry richardson ad squid.
                 </div>
-                <div class="modal-body">
-                  <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-dismiss="modal"
+              </div>
+            </div>
+            <div className="card">
+              <div className="card-header" role="tab" id="headingTwo">
+                <h5 className="mb-0">
+                  <a
+                    className="collapsed"
+                    data-toggle="collapse"
+                    href="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
                   >
-                    Close
-                  </button>
-                  <button type="button" class="btn btn-primary">
-                    Save changes
-                  </button>
+                    Collapsible Group Item #2
+                  </a>
+                </h5>
+              </div>
+              <div
+                id="collapseTwo"
+                className="collapse show"
+                role="tabpanel"
+                aria-labelledby="headingTwo"
+              >
+                <div className="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life
+                  accusamus terry richardson ad squid.
                 </div>
               </div>
             </div>
