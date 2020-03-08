@@ -39,66 +39,57 @@ class AreaHome extends Component {
   }
   render() {
     if (!this.state.isLoading) {
-      return (
-        <div>
-          <h2>{this.state.currentObj[0].name}</h2>
-          <p>Hello</p>
-          <div id="accordion" role="tablist">
-            <div className="card">
-              <div className="card-header" role="tab" id="headingOne">
-                <h5 className="mb-0">
-                  <a
-                    data-toggle="collapse"
-                    href="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
-                  >
-                    Collapsible Group Item #1
-                  </a>
-                </h5>
-              </div>
-
-              <div
-                id="collapseOne"
-                className="collapse show"
-                role="tabpanel"
-                aria-labelledby="headingOne"
-              >
-                <div className="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid.
-                </div>
-              </div>
-            </div>
-            <div className="card">
-              <div className="card-header" role="tab" id="headingTwo">
-                <h5 className="mb-0">
-                  <a
-                    className="collapsed"
-                    data-toggle="collapse"
-                    href="#collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="collapseTwo"
-                  >
-                    Collapsible Group Item #2
-                  </a>
-                </h5>
-              </div>
-              <div
-                id="collapseTwo"
-                className="collapse show"
-                role="tabpanel"
-                aria-labelledby="headingTwo"
-              >
-                <div className="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid.
-                </div>
-              </div>
-            </div>
+      let listofThem = this.state.currentObj;
+      let list = listofThem.map(item => {
+        return (
+          <div>
+            <p>
+              {/* <Link to={"/infopage/" + item.parkCode}>{item.fullName}</Link>:{" "}
+                  {item.fullName} */}
+              {item.name}
+            </p>
           </div>
-        </div>
-      );
+        );
+      });
+      return <div id="container">{list}</div>;
+      //   return (
+      //     <div>
+      //       <h2>{this.state.currentObj[0].name}</h2>
+      //       <p>Hello</p>
+
+      //       <div id="accordion" role="tablist">
+
+      //           for ()
+      //         <div className="card">
+      //           <div className="card-header" role="tab" id="headingOne">
+      //             <h5 className="mb-0">
+      //               <a
+      //                 data-toggle="collapse"
+      //                 href="#collapseOne"
+      //                 aria-expanded="true"
+      //                 aria-controls="collapseOne"
+      //               >
+      //                 Collapsible Group Item #1
+      //               </a>
+      //             </h5>
+      //           </div>
+
+      //           <div
+      //             id="collapseOne"
+      //             className="collapse show"
+      //             role="tabpanel"
+      //             aria-labelledby="headingOne"
+      //           >
+      //             <div className="card-body">
+      //               Anim pariatur cliche reprehenderit, enim eiusmod high life
+      //               accusamus terry richardson ad squid.
+      //             </div>
+      //           </div>
+      //         </div>
+
+      //   </div>
+      // </div>
+      //   );
     } else {
       return <div>Loading</div>;
     }
