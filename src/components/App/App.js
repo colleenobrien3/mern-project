@@ -20,6 +20,12 @@ import Home from "../Home/Home";
 import "./App.css";
 import DE from "../DE/DE";
 import AreaHome from "../AreaHome/AreaHome";
+import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import $ from "jquery";
+import "../../../node_modules/bootstrap/dist/js/bootstrap";
+import "jquery";
+import "bootstrap/dist/js/bootstrap";
 
 class App extends Component {
   constructor(props) {
@@ -61,11 +67,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <nav>
+        <nav className="navbar navbar-dark bg-dark">
           <Link to="/">
-            <h1>National Parks List</h1>
+            <h1>BrewerDE</h1>
           </Link>
-          <Link to="/parks">Parks List</Link>
           {/* <Link to="/DE">DE</Link>
           <Link to="/PHILLY">PHILLY</Link>
           <Link to="/DC">DC</Link> */}

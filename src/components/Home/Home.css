@@ -1,0 +1,23 @@
+.beerPic {
+  height: 60vh;
+  width: 30%;
+  background-image: url("./beerDE.jpg");
+  background-position: center;
+  background-size: cover;
+  margin: 5% auto;
+  display: inline-block;
+  margin-right: 15%;
+}
+
+#greeting {
+  width: 35% !important;
+  display: inline-block;
+  margin: 5% 5%;
+  font-size: 1.7em;
+  padding-left: 5%;
+}
+
+#homeCont {
+  display: inline-flex;
+  justify-content: space-around;
+}

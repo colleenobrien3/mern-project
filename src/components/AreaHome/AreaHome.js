@@ -54,9 +54,9 @@ class AreaHome extends Component {
               <h5 className="mb-0">
                 <a
                   data-toggle="collapse"
-                  href="#collapseOne"
+                  href="#collapse1"
                   aria-expanded="true"
-                  aria-controls="collapseOne"
+                  aria-controls="collapse1"
                 >
                   {item.name}
                 </a>
@@ -64,14 +64,20 @@ class AreaHome extends Component {
             </div>
 
             <div
-              id="collapseOne"
+              id="collapse1"
               className="collapse show"
               role="tabpanel"
               aria-labelledby="headingOne"
             >
               <div className="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life
-                accusamus terry richardson ad squid.
+                Street: {item.street}
+                <br />
+                City: {item.city}
+                <br />
+                Postal code:
+                {item.postal_code}
+                <br />
+                Brewery type: {item.brewery_type}
               </div>
             </div>
           </div>
