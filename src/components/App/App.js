@@ -98,7 +98,7 @@ class App extends Component {
           /> */}
           <Route
             path="/infopage/:parkpage"
-            // component={Price}
+            exact
             render={routerProps => (
               <AreaHome
                 setInfoPage={this.setInfoPage}
