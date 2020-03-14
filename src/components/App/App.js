@@ -26,6 +26,7 @@ import $ from "jquery";
 import "../../../node_modules/bootstrap/dist/js/bootstrap";
 import "jquery";
 import "bootstrap/dist/js/bootstrap";
+const axios = require("axios");
 
 class App extends Component {
   constructor(props) {
@@ -52,8 +53,9 @@ class App extends Component {
     console.log(process.env.NODE_ENV);
     let names = [];
     let named = "";
-    fetch(parkapiFullURL)
-      .then(response => response.json())
+    axios
+      .get(parkapiFullURL)
+      // .then(response => response.json())
       .then(response => {
         console.log(response);
         named = response;
