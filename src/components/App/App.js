@@ -45,12 +45,11 @@ class App extends Component {
     let parkapiFullURL = "";
     if (process.env.NODE_ENV === "production") {
       parkapiFullURL = "https://evening-ravine-76048.herokuapp.com/breweries";
-    } else {
+    } else if (process.env.NODE_ENV === "development") {
       parkapiFullURL = "http://localhost:8080/breweries";
     }
     console.log(parkapiFullURL);
     console.log(process.env.NODE_ENV);
-    parkapiFullURL = "http://localhost:8080/breweries";
     let names = [];
     let named = "";
     fetch(parkapiFullURL)
