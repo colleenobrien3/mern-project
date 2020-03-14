@@ -57,7 +57,7 @@ class App extends Component {
       .get(parkapiFullURL)
       // .then(response => response.json())
       .then(response => {
-        console.log(response);
+        console.log(response.data);
         named = response;
         named.data.forEach(item => {
           // let nameofPark= item.fullName
