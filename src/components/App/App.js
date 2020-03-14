@@ -59,7 +59,7 @@ class App extends Component {
       .then(response => {
         console.log(response);
         named = response;
-        named.forEach(item => {
+        named.data.forEach(item => {
           // let nameofPark= item.fullName
           names.push(item);
           // console.log(names)
