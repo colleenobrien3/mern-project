@@ -1,5 +1,5 @@
 .beerPic {
-  height: 60vh;
+  height: 40vh;
   width: 30%;
   background-image: url("./beerDE.jpg");
   background-position: center;
@@ -9,12 +9,22 @@
   margin-right: 15%;
 }
 
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+}
+
+.vaPic {
+  background-image: url("./vaNew.png");
+}
+
 #greeting {
   width: 35% !important;
   display: inline-block;
   margin: 5% 5%;
   font-size: 1.7em;
-  padding-left: 5%;
+  padding-left: 3%;
 }
 
 #homeCont {

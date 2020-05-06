@@ -5,19 +5,21 @@ import $ from "jquery";
 import "../../../node_modules/bootstrap/dist/js/bootstrap";
 import "jquery";
 import "bootstrap/dist/js/bootstrap";
+import "./AreaHome.css";
+import { Link } from "react-router-dom";
 
 class AreaHome extends Component {
   constructor() {
     super();
     this.state = {
       currentObj: [],
-      isLoading: true
+      isLoading: true,
     };
   }
 
   setCurrentObj = () => {
     let currentObj = this.props.names.filter(
-      item => item.state === this.props.match.params.parkpage
+      (item) => item.state === this.props.match.params.parkpage
     );
     return currentObj;
   };
@@ -40,7 +42,7 @@ class AreaHome extends Component {
   render() {
     if (!this.state.isLoading) {
       let listofThem = this.state.currentObj;
-      let list = listofThem.map(item => {
+      let list = listofThem.map((item) => {
         return (
           //   <div>
           //     <p>
@@ -85,7 +87,14 @@ class AreaHome extends Component {
           //   </div>
         );
       });
-      return <div id="container">{list}</div>;
+      return (
+        <div className="pageContainer">
+          <Link to="/">
+            <div id="homeButton">Home</div>
+          </Link>
+          <div id="container">{list}</div>
+        </div>
+      );
       //   return (
       //     <div>
       //       <h2>{this.state.currentObj[0].name}</h2>

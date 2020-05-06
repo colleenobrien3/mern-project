@@ -13,7 +13,7 @@
 // export default App;
 
 import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import Home from "../Home/Home";
 // import Parks from "../Parks/Parks";
 // import InfoPage from "../Infopage/InfoPage";
@@ -26,14 +26,16 @@ import $ from "jquery";
 import "../../../node_modules/bootstrap/dist/js/bootstrap";
 import "jquery";
 import "bootstrap/dist/js/bootstrap";
+import { createBrowserHistory } from "history";
 const axios = require("axios");
 
 class App extends Component {
   constructor(props) {
     super(props);
+    this.history = createBrowserHistory();
     this.state = {
       infoPage: null,
-      names: []
+      names: [],
     };
     this.setInfoPage = this.setInfoPage.bind(this);
   }
@@ -56,10 +58,10 @@ class App extends Component {
     axios
       .get(parkapiFullURL)
       // .then(response => response.json())
-      .then(response => {
+      .then((response) => {
         console.log(response.data);
         named = response;
-        named.data.forEach(item => {
+        named.data.forEach((item) => {
           // let nameofPark= item.fullName
           names.push(item);
           // console.log(names)
@@ -68,7 +70,7 @@ class App extends Component {
         });
       })
 
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
       });
   }
@@ -83,63 +85,60 @@ class App extends Component {
           {/* <Link to="/DE">DE</Link>
           <Link to="/PHILLY">PHILLY</Link>
           <Link to="/DC">DC</Link> */}
-          <Link to="/infopage/Delaware">DE</Link>
-          <Link to="/infopage/Pennsylvania">PA</Link>
-          <Link to="/infopage/Virginia">VA</Link>
-          <Link to="/infopage/Maryland">MD</Link>
-          <Link to="/infopage/District of Columbia">DC</Link>
           {/* <Link to={"/infopage/" + item.parkCode}>{item.fullName}</Link> */}
         </nav>
         <main>
-          <Route path="/" exact component={Home} />
-          {/* <Route
+          <Switch>
+            <Route path="/" exact component={Home} />
+            {/* <Route
             path="/parks"
             render={routerProps => <Parks {...routerProps} {...this.state} />}
           /> */}
-          <Route
-            path="/infopage/:parkpage"
-            exact
-            render={routerProps => (
-              <AreaHome
-                setInfoPage={this.setInfoPage}
-                {...routerProps}
-                {...this.state}
-              />
-            )}
-          />
-          <Route
-            path="/DE"
-            // component={Price}
-            render={routerProps => (
-              <AreaHome
-                setInfoPage={this.setInfoPage}
-                {...routerProps}
-                {...this.state}
-              />
-            )}
-          />
-          <Route
-            path="/PHILLY"
-            // component={Price}
-            render={routerProps => (
-              <AreaHome
-                setInfoPage={this.setInfoPage}
-                {...routerProps}
-                {...this.state}
-              />
-            )}
-          />
-          <Route
-            path="/DC"
-            // component={Price}
-            render={routerProps => (
-              <AreaHome
-                setInfoPage={this.setInfoPage}
-                {...routerProps}
-                {...this.state}
-              />
-            )}
-          />
+            <Route
+              path="/infopage/:parkpage"
+              exact
+              render={(routerProps) => (
+                <AreaHome
+                  setInfoPage={this.setInfoPage}
+                  {...routerProps}
+                  {...this.state}
+                />
+              )}
+            />
+            <Route
+              path="/DE"
+              // component={Price}
+              render={(routerProps) => (
+                <AreaHome
+                  setInfoPage={this.setInfoPage}
+                  {...routerProps}
+                  {...this.state}
+                />
+              )}
+            />
+            <Route
+              path="/PHILLY"
+              // component={Price}
+              render={(routerProps) => (
+                <AreaHome
+                  setInfoPage={this.setInfoPage}
+                  {...routerProps}
+                  {...this.state}
+                />
+              )}
+            />
+            <Route
+              path="/DC"
+              // component={Price}
+              render={(routerProps) => (
+                <AreaHome
+                  setInfoPage={this.setInfoPage}
+                  {...routerProps}
+                  {...this.state}
+                />
+              )}
+            />
+          </Switch>
         </main>
       </div>
     );
